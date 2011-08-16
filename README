@@ -1,0 +1,114 @@
+Tomython Version 0.1
+Programmed by Jorge Pizarro Callejas <jorgicio [at] jorgicio [dot] net>
+http://www.jorgicio.net
+
+What is Tomython?
+* Tomython (Tomato + Python) is a program made in Python for using as a Pomodoro clock for managing the time by productive reasons.
+It's a Python way that uses pynotify, pygtk, gstreamer, and another basic modules for the OS and managing files and I/O.
+Tomython was formerly named Pymodoro, but I found another project with that name, made in Python too and it uses wxPython.
+
+* What's the purpose of this program?
+As I've said before, Tomython is used as a Pomodoro clock that sounds 25 minutes after you set it on, double-clicking on the Pomodoro-shaped tray icon.
+Commonly used for the Pomodoro Technique.
+
+* Pomodoro? Tomato? What's the relation? What means "Pomodoro Technique" and what's its methodology?
+Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 80's. Its name comes from the tomato-shaped kitchen timer clock that
+Cirillo used when he was a university student. Cirillo is Italian and the word 'pomodoro' means 'tomato' in Italian language.
+The steps for using this method are the followings:
+    1 - Make a list of activities to do
+    2 - Set the Pomodoro Timer to 25 minutes for each activity, beginning for the first of all (obviously).
+        (Note: If you end the activity in the first 5 minutes, don't count it and begin with the next activity of the list. This condition is
+        appliable to short jobs.)
+    3 - Mark the activity as done (usually with a ticket or an 'x') and take a pause of 5 minutes.
+    4 - Do the step 2 once again, but with the next activity of the list.
+    5 - When you complete 4 pomodoros, take a longer pause (15-20 min.)
+    6 - If you have more activities, start again from the step 2, considering the next steps and the next activities to do. In other case, you're done.
+
+For further information about this, you can visit http://www.pomodorotechnique.com, or the Wikipedia articles: http://en.wikipedia.org/wiki/Pomodoro_Technique
+(English) and http://es.wikipedia.org/wiki/Técnica_Pomodoro (Spanish). Or Google about it. If you have enough money, you can buy the book "The Pomodoro Technique"
+by Francesco Cirillo.
+
+* Why Python? Why not another language or another method, technology or another stuff?
+Python is easy for me. I programed another things in this language and I love it <3
+Also, I had another problems for finding some alternatives. There are for Windows, Mac OS X, Android, iPhone and a jar for another mobile phones.
+There's an applet for GNOME, but it depends of that desktop environment. And there's WorkRave, that's not exactly a Pomodoro software but it may work.
+And there are cross-plataform alternatives made for Adobe AIR, such as FocusBooster, but it uses a lot of resources.
+Because of all said before, I wanted for programming Tomython, using some scripts, the Python Documentation and another scripts that I found on the
+Internet and modified for the needs of this project.
+You may view this article in Genbeta: http://www.genbeta.com/linux/temporizadores-pomodoro-para-todos-los-sistemas-operativos (Spanish)
+
+* What do I need for this Software?
+That's the important part. You (obviously) need Python 2. The most of the OS and Linux Distributions (and another Unix-based OS) uses the 2 version because of the support.
+When this version went to be deprecated and unsupported, I'll develop Tomython using Python 3.
+Also, you need the following dependencies:
+    * gstreamer0.10-python
+    * pynotify
+    * pygtk
+    * notify-osd or another nofity system.
+
+* How do I get this program? I wanna test it!
+    It's so simple. You need GIT (http://git-scm.com/download) and once installed, you need to do a clone of the repository using the following command:
+        git clone git://github.com/jorgicio/Tomython.git
+    
+    You can use a GUI if you want it.
+
+* I'm so n00b. Please, Jorgicio, teach me how to use this program.
+    First, you need to do a list in a text file. The format content must be like this:
+        Job 1
+        Job 2
+        etc.
+    Notice that every activity or job must be one per line.
+    Then, you can use the program like this:
+        python main.py inputfile
+    
+    If you have python 2 and python 3 in the same OS, you must use "python2" instead of "python".
+
+For example:
+        Supposing I have a text file called "somestuff". I have the following activities in this way in that file:
+        
+        Watch Porn
+        Download some games
+        Clean the windows
+        Feed the cat
+        Washing
+        Eating some sushi
+
+So, the usage is:
+        
+        python main.py somestuff
+        
+        or
+        
+        python2 main.py somestuff
+
+depending on the case.
+
+Also, you can give permissions for executing the file main.py.
+
+    chmod +x main.py
+    
+    and then:
+
+    ./main.py inputfile
+
+Once done this, one Pomodoro will appear as a tray icon. Click on it and you'll start the clock.
+25 minutes after, the clock will sound.
+If you have another activities, click on the Pomodoro again. Obvioustly, respecting the steps of the Pomodoro Technique, mentioned before.
+Note: For every notification, a Pomodoro will appear. It may be fixed in a future time. In this case, click on the first Pomodoro.
+
+The Pomodoros will end when Tomython ends of reading the input file. All the activities will be marked as done (with a "[X]") in an output
+file which name depends of the input file. For ex.: if the input file is named "activities", the output file will be named "activities_realizadas"
+unless you modify the main.py and you change the name if you want it.
+
+* LICENSE
+    This program is open-source, licensed under the GPL. You can modify it if you find a bug or you want to add some features. Don't forget giving credits for the
+    programmer and the sources of the codes that I used in this project. For further information, read the next item, DISCLAIMERS.
+
+DISCLAIMERS:
+    * I only tested Tomython under Linux, but I don't guarantee that may work in another OS. For anything (if you find a bug, you wanna make a contribution or collaborating
+    in the repository or an invitation for fooding or drinking some beers), contact me by mail (that's in the beginning of this README) or
+    fill the Contact Form in the link (that's in the beginning of this file, too) or in http://www.jorgicio.net, in the mail icon.
+    * As I said before, it works using Python 2. I programmed Tomython under Arch Linux, that it has Python 2 and 3. Because of this, I specified in the beginning of the
+    file "main.py" that it uses Python 2. If you use another Linux Distribution or another OS and it only uses Python 2, you can change "python2" by "python".
+    The result would be "#!/usr/bin/python" instead of "#!/usr/bin/python2".
+    * If you found my English has some errors or it's bad, I'm so sorry.
